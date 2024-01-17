@@ -17,12 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="sticky bg-neutral-600"></header>
-        <main>
-          <nav className="bg-neutral-400"></nav>
-          <article className="bg-neutral-200">{children}</article>
+        <header className="sticky bg-neutral-500 h-12 px-4 flex items-center justify-end">
+          <span>Frontend Book</span>
+        </header>
+        <main className="grid grid-cols-[auto_1fr] h-auto">
+          <input type="checkbox" className="peer fixed top-5 left-8" />
+          <nav className="bg-neutral-300 w-0 px-0 py-4 peer-checked:w-64 peer-checked:px-4 duration-150">
+            sidebar
+          </nav>
+          <article className="bg-neutral-200 p-4">{children}</article>
         </main>
-        <footer className="bg-neutral-800"></footer>
+        <footer className="bg-neutral-600 px-4 h-24 flex items-center">
+          footer
+        </footer>
       </body>
     </html>
   );
