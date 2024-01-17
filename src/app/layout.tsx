@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="sticky bg-neutral-500 h-12 px-4 flex items-center justify-end">
+        <header className="sticky top-0 bg-neutral-500 h-12 px-4 flex items-center justify-end">
           <span>Frontend Book</span>
         </header>
         <main className="grid grid-cols-[auto_1fr] h-auto">
