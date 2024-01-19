@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SideMenu } from "@/components/side-menu";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,7 +24,7 @@ export default function RootLayout({
         <main className="grid h-auto grid-cols-[auto_1fr]">
           <input type="checkbox" className="peer fixed left-8 top-5" />
           <nav className="w-0 bg-neutral-300 px-0 py-4 duration-150 peer-checked:w-64 peer-checked:px-4">
-            sidebar
+            <SideMenu />
           </nav>
           <article className="bg-neutral-200 p-4">{children}</article>
         </main>
