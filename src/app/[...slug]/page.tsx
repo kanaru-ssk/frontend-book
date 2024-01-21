@@ -12,14 +12,20 @@ type Params = {
 };
 
 export async function generateMetadata({ params }: Params) {
-  const mdx = await getArticleMdx(params.slug);
+  const slug = params.slug.pop();
+  if (!slug) return notFound();
+
+  const mdx = await getArticleMdx(slug);
   if (!mdx) return notFound();
 
   return mdx.metadata;
 }
 
 export default async function Article({ params }: Params) {
-  const mdx = await getArticleMdx(params.slug);
+  const slug = params.slug.pop();
+  if (!slug) return notFound();
+
+  const mdx = await getArticleMdx(slug);
   if (!mdx) return notFound();
 
   const MDXComponent = mdx.default;

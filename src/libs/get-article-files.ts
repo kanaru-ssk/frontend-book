@@ -5,7 +5,7 @@ type ArticleFile = {
   chapterId: number;
   sectionId: number;
   fileName: string;
-  title: string;
+  slug: string;
 };
 
 export async function getArticleFiles() {
@@ -18,7 +18,7 @@ export async function getArticleFiles() {
         .slice(0, 5)
         .split("-")
         .map(Number);
-      const title = fileName.slice(6, -4);
-      return [...files, { chapterId, sectionId, fileName, title }];
+      const slug = fileName.slice(6, -4);
+      return [...files, { chapterId, sectionId, fileName, slug }];
     }, []);
 }
