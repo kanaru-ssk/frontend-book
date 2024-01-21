@@ -1,7 +1,7 @@
 import { getArticleFiles } from "@/libs/get-article-files";
 import { getArticleMdx } from "@/libs/get-article-mdx";
 
-type ArticleIndex = {
+export type ArticleIndex = {
   chapterId: number;
   href: string;
   slug: string;
@@ -14,7 +14,7 @@ type ArticleIndex = {
   }[];
 };
 
-export async function getArticleIndex() {
+export async function getArticleIndexes() {
   const articleFiles = await getArticleFiles();
   const chapters: ArticleIndex[] = [];
 

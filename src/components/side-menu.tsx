@@ -1,13 +1,15 @@
 import Link from "next/link";
-import { getArticleIndex } from "@/libs/get-article-index";
+import type { ArticleIndex } from "@/libs/get-article-indexes";
 
-export async function SideMenu() {
-  const articleIndex = await getArticleIndex();
+type Props = {
+  articleIndexes: ArticleIndex[];
+};
 
+export async function SideMenu({ articleIndexes }: Props) {
   return (
     <nav>
       <ol className="ml-4 list-decimal">
-        {articleIndex.map((chapter) => (
+        {articleIndexes.map((chapter) => (
           <li key={chapter.chapterId} className="my-2">
             <Link
               href={chapter.href}
