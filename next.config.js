@@ -5,6 +5,14 @@ const nextConfig = {
   output: "export",
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/introduction",
+      },
+    ];
+  },
 };
 
 module.exports = withMDX(nextConfig);
