@@ -1,0 +1,47 @@
+body {
+  height: auto;
+}
+
+h1 {
+}
+
+h2 {
+  margin: 16px 0px;
+}
+
+span {
+  font-weight: bold;
+}
+
+header {
+  background-color: blue;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.concept {
+  text-align: center;
+}
+
+.contents-header {
+  text-align: center;
+}
+
+.content {
+  margin: 0px 24px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#reverse-content {
+  flex-direction: row-reverse;
+}
+
+footer {
+  background-color: red;
+  height: 120px;
+}
