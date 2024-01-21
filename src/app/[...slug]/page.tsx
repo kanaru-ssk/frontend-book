@@ -3,15 +3,14 @@ import { getArticleMdx } from "@/libs/get-article-mdx";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const articleParams = await getArticleParams();
-  return articleParams.map(({ slug }) => ({ slug }));
+  return await getArticleParams();
 }
 
-type Params = {
+type Props = {
   params: { slug: string[] };
 };
 
-export async function generateMetadata({ params }: Params) {
+export async function generateMetadata({ params }: Props) {
   const slug = params.slug.pop();
   if (!slug) return notFound();
 
@@ -21,7 +20,7 @@ export async function generateMetadata({ params }: Params) {
   return mdx.metadata;
 }
 
-export default async function Article({ params }: Params) {
+export default async function Article({ params }: Props) {
   const slug = params.slug.pop();
   if (!slug) return notFound();
 
