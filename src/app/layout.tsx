@@ -21,11 +21,17 @@ export default function RootLayout({
           <span>Frontend Book</span>
         </header>
         <main className="grid h-auto grid-cols-[auto_1fr]">
-          <input type="checkbox" className="peer fixed left-8 top-5" />
+          <input
+            type="checkbox"
+            defaultChecked
+            className="peer fixed left-8 top-5"
+          />
           <aside className="w-0 bg-neutral-300 px-0 py-4 duration-150 peer-checked:w-64 peer-checked:px-4">
             sidebar
           </aside>
-          <article className="bg-neutral-200 p-4">{children}</article>
+          <article className="prose max-w-none bg-neutral-200 p-4">
+            {children}
+          </article>
         </main>
         <footer className="flex h-24 items-center bg-neutral-600 px-4">
           footer
