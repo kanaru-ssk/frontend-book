@@ -1,7 +1,7 @@
 import { getArticleFiles } from "@/libs/get-article-files";
 
-export async function getArticleParams() {
-  const articleFiles = await getArticleFiles();
+export function getArticleParams() {
+  const articleFiles = getArticleFiles();
   return articleFiles.map((file) => {
     const chapterRoot = articleFiles.find(
       ({ chapterId }) => chapterId === file.chapterId,
