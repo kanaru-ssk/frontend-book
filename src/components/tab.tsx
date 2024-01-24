@@ -16,7 +16,7 @@ export function Tab({ tabs }: Props) {
           <button
             key={index}
             type="button"
-            className={`m-2 -mb-0.5 w-36 border-b-2 px-9 py-3 text-lg ${index === activeTab ? " border-neutral-950 text-neutral-900" : "border-neutral-300 text-neutral-400"}`}
+            className={`m-2 -mb-0.5 w-36 border-b-2 px-9 py-3 text-lg ${index === activeTab ? " border-neutral-950 text-neutral-900" : "border-neutral-300 text-neutral-400 hover:border-neutral-400"}`}
             onClick={() => setActiveTab(index)}
           >
             {tab.label}
