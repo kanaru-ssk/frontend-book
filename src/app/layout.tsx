@@ -20,7 +20,7 @@ export default async function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <header className="sticky top-0 z-10 flex h-16 items-center border-b border-b-neutral-200 px-24 backdrop-blur md:px-10">
+        <header className="sticky top-0 z-10 flex h-16 items-center border-b border-b-neutral-300 px-24 backdrop-blur md:px-10">
           <Link href="/" className="text-xl font-bold">
             Frontend Book
           </Link>
