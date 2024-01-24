@@ -28,12 +28,16 @@ headとbody
 
 ### 準備
 
-### HTMLで使用できるタグ
+1. 任意のフォルダ内に新たなフォルダを作成し、`web`と名前を入力する
+1. VSCodeを立ち上げ、VSCodeで作成したフォルダを開く
+1. `New Files`から新たなファイルを作成し、`index.html`と名前を入力する
+
+### [HTMLで使用できるタグ](https://developer.mozilla.org/ja/docs/Web/HTML/Reference)
 
 #### 段落
 
 ```
-<p>アノマロカリスの生態</p>
+<p>Naniyara sugoi kodawarino mame</p>
 ```
 
 - 文章の段落をつくりたいときに使う
@@ -41,7 +45,9 @@ headとbody
 #### グループ化
 
 ```
-<div></div>
+<div class="top-page">
+  <h1>Hoge Coffee</h1>
+</div>
 ```
 
 - 複数のタグにまとめてスタイルをつけるときにグループ化するために使う
@@ -49,7 +55,11 @@ headとbody
 #### 画像
 
 ```
-<img src="/Hallucigenia.png" alt="可愛いハルキゲニアちゃん" />
+<img
+  class="content"
+  src="./coffee-beans.png"
+  alt="Specialty Coffee Beans"
+/>
 ```
 
 - 画像を表示させたいときに使う
@@ -59,7 +69,7 @@ headとbody
 #### リンク
 
 ```
-<a href="https://www.Sacabambaspis.jp">ホームページ</a>
+<a href="https://github.com/kanaru-ssk/frontend-book">Frontend Book</a>
 ```
 
 - リンクを表示したいときに使う
@@ -69,20 +79,21 @@ headとbody
 #### 見出し
 
 ```
-<h1>メインタイトル</h1>
-<h2>最上位の見出し</h2>
+<h1>Hoge Coffee</h1>
+<h2>Specialty Coffee Beans</h2>
 ```
 
 - 見出しをして表示したい部分に使う
 - `<h1>-<h6>`まであり、レベルで使い分ける
 
-↓紹介
-span
-ul
-ol
-li
-button
-input
-textarea
-video
-audio
+### その他のタグ紹介
+
+- [`<span>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/span): 文中の一部分のみに別なスタイルをあてたいときに使う
+- [`<ul>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ul): 箇条書きのリストをつくるときに使う
+- [`<ol>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ol): 順序付きのリストをつくるときに使う
+- [`<li>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/li): `<ul>`、`<ol>`の中の要素で使う
+- [`<button>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/button): ボタンを作成するときに使う
+- [`<input>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/input): ユーザーからテキストなどを入力してもらうテキストボックスをつくるときに使う
+- [`<textarea>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/textarea): 複数行入力用のテキストボックスをつくるときに使う
+- [`<video>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/video): 映像を埋め込むときに使う
+- [`<audio>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/audio): 音声を埋め込むときに使う
