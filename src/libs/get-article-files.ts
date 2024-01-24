@@ -8,7 +8,7 @@ type ArticleFile = {
   slug: string;
 };
 
-export async function getArticleFiles() {
+export function getArticleFiles() {
   return fs
     .readdirSync(path.join(process.cwd(), "src", "articles"))
     .reduce<ArticleFile[]>((files, fileName) => {
