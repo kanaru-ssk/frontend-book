@@ -2,8 +2,8 @@ import { getArticleParams } from "@/libs/get-article-params";
 import { getArticleMdx } from "@/libs/get-article-mdx";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-  return await getArticleParams();
+export function generateStaticParams() {
+  return getArticleParams();
 }
 
 type Props = {

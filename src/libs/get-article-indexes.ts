@@ -15,7 +15,7 @@ export type ArticleIndex = {
 };
 
 export async function getArticleIndexes() {
-  const articleFiles = await getArticleFiles();
+  const articleFiles = getArticleFiles();
   const chapters: ArticleIndex[] = [];
 
   for (let i = 0; i < articleFiles.length; i++) {
