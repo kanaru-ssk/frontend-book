@@ -6,7 +6,7 @@ type Mdx = {
 } & typeof import("*.mdx");
 
 export async function getArticleMdx(slug: string): Promise<Mdx | null> {
-  const articleFiles = await getArticleFiles();
+  const articleFiles = getArticleFiles();
   const file = articleFiles.find(({ fileName }) => fileName.includes(slug));
   if (!file) return null;
 

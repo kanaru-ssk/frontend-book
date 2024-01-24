@@ -1,37 +1,45 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ArticleIndex } from "@/libs/get-article-indexes";
 
 type Props = {
   articleIndexes: ArticleIndex[];
 };
 
-export async function SideMenu({ articleIndexes }: Props) {
+export function SideMenu({ articleIndexes }: Props) {
+  const pathname = usePathname();
+  const slug = pathname.split("/").pop();
+
   return (
     <nav>
-      <ol className="ml-4 list-decimal">
+      <ul>
         {articleIndexes.map((chapter) => (
-          <li key={chapter.chapterId} className="my-2">
+          <li key={chapter.chapterId}>
             <Link
               href={chapter.href}
-              className="hover:text-neutral-500 hover:underline"
+              data-active={chapter.slug === slug}
+              className="my-1 inline-block font-semibold text-neutral-500 hover:text-neutral-700 data-[active=true]:text-black"
             >
               {chapter.title}
             </Link>
-            <ol className="ml-4 list-decimal">
+            <ul>
               {chapter.sections.map((section) => (
-                <li key={section.sectionId} className="my-1">
+                <li key={section.sectionId}>
                   <Link
                     href={section.href}
-                    className="hover:text-neutral-500 hover:underline"
+                    data-active={section.slug === slug}
+                    className="ml-1 inline-block border-l border-l-neutral-300 py-1 pl-4 text-neutral-500 hover:border-l-neutral-400 hover:text-neutral-500 data-[active=true]:border-l-black data-[active=true]:text-black"
                   >
                     {section.title}
                   </Link>
                 </li>
               ))}
-            </ol>
+            </ul>
           </li>
         ))}
-      </ol>
+      </ul>
     </nav>
   );
 }
