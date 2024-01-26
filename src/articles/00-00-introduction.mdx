@@ -1,3 +1,5 @@
+import { Tabs, Tab } from "@/components/tab"
+
 export const metadata = {
   title: "導入",
 };
@@ -5,3 +7,24 @@ export const metadata = {
 # Introduction
 
 ## test
+
+<Tabs>
+  <Tab label="windows">
+    ```js
+    const nums = [0, 1, 2];
+    function plusOne() {
+      return nums.map((n) => n + 1);
+    }
+    console.log(plusOne())
+    ```
+  </Tab>
+  <Tab label="mac">
+    ```js
+    const nums = [2, 3, 4];
+    function minusOne() {
+      return nums.map((n) => n - 1);
+    }
+    console.log(plusOne())
+    ```
+  </Tab>
+</Tabs>
