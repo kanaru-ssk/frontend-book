@@ -25,14 +25,8 @@ export default async function RootLayout({
             Frontend Book
           </Link>
         </header>
-        <main className="">
-          <input
-            type="checkbox"
-            className="peer fixed left-6 top-0 z-10 h-16 w-16 appearance-none before:absolute before:right-5 before:top-8 before:block before:h-0.5 before:w-7 before:-translate-y-1 before:bg-black before:duration-500 after:absolute after:right-5 after:top-8 after:block after:h-0.5 after:w-7 after:translate-y-1 after:bg-black after:duration-500 checked:before:translate-y-0 checked:before:rotate-45 checked:after:translate-y-0 checked:after:-rotate-45 md:hidden"
-          />
-          <aside className="fixed top-16 h-[calc(100%-4rem)] w-64 -translate-x-64 overflow-y-auto bg-white px-10 py-10 shadow-2xl duration-500 peer-checked:translate-x-0 md:translate-x-0 md:shadow-none">
-            <SideMenu articleIndexes={articleIndexes} />
-          </aside>
+        <SideMenu articleIndexes={articleIndexes} />
+        <main>
           <article className="prose prose-neutral max-w-none break-all p-10 md:ml-64">
             {children}
           </article>
