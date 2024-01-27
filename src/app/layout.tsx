@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SideMenu } from "@/components/side-menu";
 import { getArticleIndexes } from "@/libs/get-article-indexes";
 import "./globals.css";
+import { SyncTabProvider } from "@/components/sync-tab";
 
 export const metadata: Metadata = {
   title: { default: "Frontend Book", template: "%s | Frontend Book" },
@@ -33,8 +34,8 @@ export default async function RootLayout({
           <aside className="fixed top-16 h-[calc(100%-4rem)] w-64 -translate-x-64 overflow-y-auto bg-white px-10 py-10 shadow-2xl duration-500 peer-checked:translate-x-0 md:translate-x-0 md:shadow-none">
             <SideMenu articleIndexes={articleIndexes} />
           </aside>
-          <article className="prose prose-neutral max-w-none break-all p-10 md:ml-64">
-            {children}
+          <article className="prose max-w-none break-all p-10 md:ml-64">
+            <SyncTabProvider>{children}</SyncTabProvider>
           </article>
         </main>
         <footer className="py-10 text-center text-xs">
