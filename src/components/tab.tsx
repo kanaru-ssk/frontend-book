@@ -1,25 +1,23 @@
 "use client";
 
-import { Children, isValidElement, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
-type TabsProps = {
-  children: ReactNode;
+export type TabProps = {
+  tabs: {
+    label: string;
+    content: ReactNode;
+  }[];
 };
 
-export function Tabs({ children }: TabsProps) {
+export function Tab({ tabs }: TabProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const tabs = Children.toArray(children);
-  const labels = tabs.map((element) => {
-    return isValidElement(element) ? String(element.props["data-label"]) : "";
-  });
 
   return (
     <div className="shadow">
       <div className="border-b-2 border-neutral-300">
-        {labels?.map((label, index) => (
+        {tabs.map(({ label }, index) => (
           <button
-            key={index}
+            key={label}
             type="button"
             className={`${
               index === activeIndex
@@ -32,7 +30,7 @@ export function Tabs({ children }: TabsProps) {
           </button>
         ))}
       </div>
-      <div className="p-4">{tabs[activeIndex]}</div>
+      <div className="p-4">{tabs[activeIndex].content}</div>
     </div>
   );
 }
