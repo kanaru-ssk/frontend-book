@@ -5,19 +5,19 @@ import { Children, isValidElement, useState, type ReactNode } from "react";
 type TabsProps = {
   children: ReactNode;
 };
+
 export function Tabs({ children }: TabsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const labels = Children.map(children, (element) => {
-    if (isValidElement(element)) {
-      return element.props.label;
-    }
-  }) as string[];
+  const tabs = Children.toArray(children);
+  const labels = tabs.map((element) => {
+    return isValidElement(element) ? String(element.props["data-label"]) : "";
+  });
 
   return (
     <div className="shadow">
       <div className="border-b-2 border-neutral-300">
-        {labels.map((label, index) => (
+        {labels?.map((label, index) => (
           <button
             key={index}
             type="button"
@@ -32,15 +32,7 @@ export function Tabs({ children }: TabsProps) {
           </button>
         ))}
       </div>
-      {Children.toArray(children)[activeIndex]}
+      <div className="p-4">{tabs[activeIndex]}</div>
     </div>
   );
-}
-
-type TabProps = {
-  label: string;
-  children: ReactNode;
-};
-export function Tab({ children }: TabProps) {
-  return <div className="p-4">{children}</div>;
 }
