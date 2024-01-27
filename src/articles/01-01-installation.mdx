@@ -1,26 +1,51 @@
+import { TabMdx } from "@/components/tab-mdx"
+
 export const metadata = {
-  title: "Installation",
+  title: "開発環境の構築",
+  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠です。このチャプターではVScodeをインストールし、開発を始める準備を整えます。"
 };
 
-# Chapter1 webサイトをつくってみる
+# 開発環境構築 : VScodeのインストール
 
-参考サイト：[mdn wed docs](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web)
+Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があります。
 
-## 01 開発環境の構築
+```html
+<body>
+  <h1>HTMLのイメージ</h1>
+  <p>このようなコードを書く</p>
+</body>
+```
 
-### 目標
+この作業には専用のテキストエディターが不可欠です。
 
-- Visual Studio Codeのインストール
-- コードフォーマッターとローカルサーバーの拡張機能をインストールする
+一般的なテキストエディターであるメモ帳アプリでは、コードの書き込みが難しく、エラーや不具合の発見が複雑になります。
 
-### 使用技術
+Visual Studio Code（VScode）は多くの開発者に愛用されている専用のテキストエディターです。
 
-- エディタ: Visual Studio Code
+このチャプターではVScodeをインストールし、開発を始める準備を整えます。
 
-### VSCodeのインストール
+## Visual Studio Codeの入手
 
-1. 以下のリンクにアクセスし、Windowsのダウンロードボタンをクリックする
+<TabMdx>
+  <div data-label="windows">
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534107)からVScodeのインストーラーをダウンロードします。
+    2. ダウンロードが完了したら、インストーラー（VSCodeUserSetup-\{version\}.exe）を実行します。これには1分ほどしかかかりません。
+  </div>
+  <div data-label="mac">
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534106)からVScodeをダウンロードします。
+    2. Finderを開き、option⌥ command⌘ Lを同時に押すとダウンロードフォルダが開きます。
+    3. ダウンロードされたzipファイルをダブルクリックして解凍すると、`Visual Studio Code.app`が表示されます。
+    4. Finderを別ウィンドウでもう一つ開き、shift⇧ command⌘ Aを同時に押すとアプリケーションフォルダが開きます。
+    3. `Visual Studio Code.app`をアプリケーションフォルダにドラッグします。
+    4. アプリケーションフォルダからVScodeをダブルクリックして開きます。
+    5. Dock内にあるアイコンを右クリックして、コンテキストメニューを表示し、「オプション」→「Dockに残す」を選択して、VScodeをDockに追加します。
+  </div>
+</TabMdx>
 
-   [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+## 初期設定
 
-2.
+インストールが完了すると、VScodeが起動します。初回起動時には、いくつかの初期設定が求められることがあります。言語やテーマの選択など、個人の好みに合わせて設定してください。
+
+これで、VScodeのインストールと基本的なセットアップが完了しました。次のステップに進んで、実際にコーディングを始めましょう！
+
+Happy coding!
