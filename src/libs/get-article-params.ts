@@ -1,15 +1,19 @@
-import { getArticleFiles } from "@/libs/get-article-files";
+import { getArticles } from "@/libs/get-articles";
 
-export function getArticleParams() {
-  const articleFiles = getArticleFiles();
-  return articleFiles.map((file) => {
-    const chapterRoot = articleFiles.find(
-      ({ chapterId }) => chapterId === file.chapterId,
-    );
-    const slug = [file.slug];
-    if (file.chapterId && file.sectionId && chapterRoot)
-      slug.unshift(chapterRoot.slug);
+export async function getArticleParams() {
+  const articles = await getArticles();
 
-    return { slug };
-  }, []);
+  const params: { slug: string[] }[] = [];
+  let chapterSlug: string = "";
+  for (let i = 0; i < articles.length; i++) {
+    const slug: string[] = [];
+
+    slug.push(articles[i].slug);
+    if (articles[i].sectionId === 0) chapterSlug = articles[i].slug;
+    else slug.unshift(chapterSlug);
+
+    params.push({ slug });
+  }
+
+  return params;
 }

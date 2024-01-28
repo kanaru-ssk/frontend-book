@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SideMenu } from "@/components/side-menu";
-import { getArticleIndexes } from "@/libs/get-article-indexes";
+import { getArticleChapters } from "@/libs/get-article-chapters";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  const articleIndexes = await getArticleIndexes();
+  const articleChapters = await getArticleChapters();
 
   return (
     <html lang="ja">
@@ -25,12 +25,8 @@ export default async function RootLayout({
             Frontend Book
           </Link>
         </header>
-        <SideMenu articleIndexes={articleIndexes} />
-        <main className="mt-16">
-          <article className="prose prose-neutral max-w-none break-all px-5 py-10 md:ml-64 md:px-10">
-            {children}
-          </article>
-        </main>
+        <SideMenu articleChapters={articleChapters} />
+        <main className="mt-16 px-5 py-10 md:ml-64 md:px-10">{children}</main>
         <footer className="py-10 text-center text-xs">
           &copy; 2024 Frontend Book
         </footer>

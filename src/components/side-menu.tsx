@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ArticleIndex } from "@/libs/get-article-indexes";
+import type { ArticleChapter } from "@/libs/get-article-chapters";
 
 type Props = {
-  articleIndexes: ArticleIndex[];
+  articleChapters: ArticleChapter[];
 };
 
-export function SideMenu({ articleIndexes }: Props) {
+export function SideMenu({ articleChapters }: Props) {
   const pathname = usePathname();
   const slug = pathname.split("/").pop();
 
@@ -23,9 +23,9 @@ export function SideMenu({ articleIndexes }: Props) {
         htmlFor="menu-button"
         className="fixed top-16 hidden h-full w-full peer-checked:block"
       />
-      <nav className="fixed top-16 h-[calc(100%-4rem)] w-64 -translate-x-64 overflow-y-auto bg-white px-10 py-10 shadow-2xl duration-500 peer-checked:translate-x-0 md:translate-x-0 md:shadow-none">
+      <nav className="fixed top-16 z-10 h-[calc(100%-4rem)] w-64 -translate-x-64 overflow-y-auto bg-white px-10 py-10 shadow-2xl duration-500 peer-checked:translate-x-0 md:translate-x-0 md:shadow-none">
         <ul>
-          {articleIndexes.map((chapter) => (
+          {articleChapters.map((chapter) => (
             <li key={chapter.chapterId}>
               <Link
                 href={chapter.href}
