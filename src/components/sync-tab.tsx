@@ -2,9 +2,11 @@
 
 import { useState, useContext, createContext, type ReactNode } from "react";
 
+type Os = "windows" | "mac";
+
 type SyncTabValue = {
-  activeTab: number;
-  setActiveTab: (activeTab: number) => void;
+  target: Os;
+  setTarget: (os: Os) => void;
 };
 
 const SyncTabContext = createContext<SyncTabValue>({} as SyncTabValue);
@@ -14,44 +16,47 @@ type SyncTabProviderProps = {
 };
 
 export function SyncTabProvider({ children }: SyncTabProviderProps) {
-  const [activeTab, setActiveTab] = useState(0);
+  const [target, setTarget] = useState<Os>("windows");
 
   return (
-    <SyncTabContext.Provider value={{ activeTab, setActiveTab }}>
+    <SyncTabContext.Provider value={{ target, setTarget }}>
       {children}
     </SyncTabContext.Provider>
   );
 }
 
-type Props = {
-  tabs: {
-    label: string;
-    content: ReactNode;
-  }[];
-};
+type SyncTabProps = { contents: { windows: ReactNode; mac: ReactNode } };
 
-export function SyncTab({ tabs }: Props) {
-  const { activeTab, setActiveTab } = useContext(SyncTabContext);
+export function SyncTab({ contents }: SyncTabProps) {
+  const { target } = useContext(SyncTabContext);
 
   return (
     <div className="shadow">
       <div className="border-b-2 border-neutral-300">
-        {tabs.map((tab, index) => (
-          <button
-            key={index}
-            type="button"
-            className={`${
-              index === activeTab
-                ? "border-black text-black"
-                : "border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-600"
-            } m-2 -mb-0.5 w-36 border-b-2 px-8 py-3 text-lg`}
-            onClick={() => setActiveTab(index)}
-          >
-            {tab.label}
-          </button>
-        ))}
+        <Label os="windows" />
+        <Label os="mac" />
       </div>
-      <div className="p-4">{tabs[activeTab].content}</div>
+      <div className="p-4">{contents[target]}</div>
     </div>
+  );
+}
+
+type LabelProps = { os: Os };
+
+function Label({ os }: LabelProps) {
+  const { target, setTarget } = useContext(SyncTabContext);
+
+  return (
+    <button
+      type="button"
+      className={`${
+        target === os
+          ? "border-black text-black"
+          : "border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-600"
+      } m-2 -mb-0.5 w-36 border-b-2 px-8 py-3 text-lg`}
+      onClick={() => setTarget(os)}
+    >
+      {os}
+    </button>
   );
 }
