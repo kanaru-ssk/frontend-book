@@ -17,7 +17,7 @@ export function SideMenu({ articleIndexes }: Props) {
       <input
         id="menu-button"
         type="checkbox"
-        className="peer fixed left-6 top-0 z-10 h-16 w-16 appearance-none before:absolute before:right-5 before:top-8 before:block before:h-0.5 before:w-6 before:-translate-y-1 before:bg-black before:duration-500 after:absolute after:right-5 after:top-8 after:block after:h-0.5 after:w-6 after:translate-y-1 after:bg-black after:duration-500 checked:before:translate-y-0 checked:before:rotate-45 checked:after:translate-y-0 checked:after:-rotate-45 md:hidden"
+        className="peer fixed left-1 top-0 z-10 h-16 w-16 cursor-pointer appearance-none before:absolute before:right-5 before:top-8 before:block before:h-0.5 before:w-6 before:-translate-y-1 before:bg-black before:duration-500 after:absolute after:right-5 after:top-8 after:block after:h-0.5 after:w-6 after:translate-y-1 after:bg-black after:duration-500 checked:before:translate-y-0 checked:before:rotate-45 checked:after:translate-y-0 checked:after:-rotate-45 md:left-6 md:hidden"
       />
       <label
         htmlFor="menu-button"
