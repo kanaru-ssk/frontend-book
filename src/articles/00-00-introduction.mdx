@@ -1,0 +1,37 @@
+import { TabMdx } from "@/components/tab-mdx"
+
+export const metadata = {
+  title: "導入",
+};
+
+# Introduction
+
+## test
+
+<TabMdx>
+  <div data-label="windows">this is `windows` tab</div>
+  <div data-label="mac">this is `mac` tab</div>
+</TabMdx>
+
+<br />
+
+<TabMdx>
+  <div data-label="windows">
+    ```js
+    const nums = [0, 1, 2];
+    function plusOne() {
+      return nums.map((n) => n + 1);
+    }
+    console.log(plusOne())
+    ```
+  </div>
+  <div data-label="mac">
+    ```js
+    const nums = [2, 3, 4];
+    function minusOne() {
+      return nums.map((n) => n - 1);
+    }
+    console.log(plusOne())
+    ```
+  </div>
+</TabMdx>
