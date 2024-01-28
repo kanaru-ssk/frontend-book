@@ -27,16 +27,12 @@ export default async function Article({ params }: Props) {
   if (!slug) return notFound();
 
   const articles = await getArticles();
-  const currentArticleIndex = articles.findIndex(
-    (article) => article.slug === slug,
-  );
-  if (currentArticleIndex === -1) return notFound();
+  const currentIndex = articles.findIndex((article) => article.slug === slug);
+  if (currentIndex === -1) return notFound();
 
-  const currArticle = articles[currentArticleIndex];
-  const prevArticle = articles[currentArticleIndex - 1];
-  const nextArticle = articles[currentArticleIndex + 1];
-
-  const MDX = currArticle.mdx.default;
+  const MDX = articles[currentIndex].mdx.default;
+  const prevArticle = articles[currentIndex - 1];
+  const nextArticle = articles[currentIndex + 1];
 
   return (
     <>
