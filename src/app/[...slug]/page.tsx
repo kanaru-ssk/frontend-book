@@ -56,7 +56,7 @@ export default async function Article({ params }: Props) {
           )}
           {nextArticle ? (
             <FooterLink
-              type="prev"
+              type="next"
               href={nextArticle.href}
               title={nextArticle.mdx.metadata.title}
             />
