@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SideMenu } from "@/components/side-menu";
 import { getArticleChapters } from "@/libs/get-article-chapters";
 import "./globals.css";
+import { SyncTabProvider } from "@/components/sync-tab";
 
 export const metadata: Metadata = {
   title: { default: "Frontend Book", template: "%s | Frontend Book" },
@@ -26,7 +27,9 @@ export default async function RootLayout({
           </Link>
         </header>
         <SideMenu articleChapters={articleChapters} />
-        <main className="mt-16 px-5 py-10 md:ml-64 md:px-10">{children}</main>
+        <main className="mt-16 px-5 py-10 md:ml-64 md:px-10">
+          <SyncTabProvider>{children}</SyncTabProvider>
+        </main>
         <footer className="py-10 text-center text-xs">
           &copy; 2024 Frontend Book
         </footer>
