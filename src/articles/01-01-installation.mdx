@@ -1,26 +1,50 @@
+import { TabMdx } from "@/components/tab-mdx"
+
 export const metadata = {
-  title: "Installation",
+  title: "開発環境の構築",
+  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠です。このチャプターではVisualStudioCodeをインストールし、開発を始める準備を整えます。"
 };
 
-# Chapter1 webサイトをつくってみる
+# 開発環境構築 : VisualStudioCodeのインストール
 
-参考サイト：[mdn wed docs](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web)
+Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があります。
 
-## 01 開発環境の構築
+```html
+<body>
+  <h1>HTMLのイメージ</h1>
+  <p>このようなコードを書く</p>
+</body>
+```
 
-### 目標
+この作業には専用のテキストエディターが不可欠です。
 
-- Visual Studio Codeのインストール
-- コードフォーマッターとローカルサーバーの拡張機能をインストールする
+一般的なテキストエディターであるメモ帳アプリでは、コードの書き込みが難しく、エラーや不具合の発見が複雑になります。
 
-### 使用技術
+VisualStudioCodeは多くの開発者に愛用されている専用のテキストエディターです。
 
-- エディタ: Visual Studio Code
+このチャプターではVisualStudioCodeをインストールし、開発を始める準備を整えます。
 
-### VSCodeのインストール
+## VisualStudioCodeのインストール手順
 
-1. 以下のリンクにアクセスし、Windowsのダウンロードボタンをクリックする
+<TabMdx>
+  <div data-label="windows">
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534107)からインストーラーをダウンロードします。
+    2. ダウンロードされたインストーラー **VSCodeUserSetup-\{version\}.exe** をダブルクリックして実行します。これには1分ほどしかかかりません。
+  </div>
+  <div data-label="mac">
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534106)からVisualStudioCodeをダウンロードします。
+    2. Finderを開き、 **command⌘ + option⌥ + L** を同時に押すとダウンロードフォルダが開きます。
+    3. ダウンロードされたzipファイルをダブルクリックして解凍すると、 **Visual Studio Code.app** が表示されます。
+       ![screenshot](/img/01-01-mac-01.png)
+    4. **command⌘ + N** でFinderを別ウィンドウで開き、 **command⌘ + shift⇧ + A** でアプリケーションフォルダが開きます。
+    3. **Visual Studio Code.app** をアプリケーションフォルダにドラッグします。
+       ![screenshot](/img/01-01-mac-02.png)
+    4. アプリケーションフォルダから **Visual Studio Code.app** をダブルクリックして開きます。
+    5. Dock内にあるアイコンを右クリックして、コンテキストメニューを表示し、「オプション」→「Dockに残す」を選択して、VisualStudioCodeをDockに追加します。
+       ![screenshot](/img/01-01-mac-03.png)
+  </div>
+</TabMdx>
 
-   [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+おめでとうございます! これでwebページを作る準備が出来ました。
 
-2.
+次のセクションで早速HTMLを書いてみましょう!
