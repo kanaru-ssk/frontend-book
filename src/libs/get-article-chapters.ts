@@ -1,4 +1,4 @@
-import { getArticles } from "@/libs/get-articles";
+import { loadArticles } from "@/libs/load-articles";
 
 export type ArticleChapter = {
   chapterId: number;
@@ -14,7 +14,8 @@ export type ArticleChapter = {
 };
 
 export async function getArticleChapters() {
-  const articles = await getArticles();
+  const articles = await loadArticles();
+
   const chapters: ArticleChapter[] = [];
 
   for (let i = 0; i < articles.length; i++) {

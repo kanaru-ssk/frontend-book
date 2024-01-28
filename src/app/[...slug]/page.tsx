@@ -1,4 +1,4 @@
-import { getArticles } from "@/libs/get-articles";
+import { loadArticles } from "@/libs/load-articles";
 import { notFound } from "next/navigation";
 import { FooterLink } from "@/components/footer-link";
 import { getArticleParams } from "@/libs/get-article-params";
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const slug = params.slug.pop();
   if (!slug) return notFound();
 
-  const articles = await getArticles();
+  const articles = await loadArticles();
   const mdx = articles.find((article) => article.slug === slug)?.mdx;
   if (!mdx) return notFound();
 
@@ -26,7 +26,7 @@ export default async function Article({ params }: Props) {
   const slug = params.slug.pop();
   if (!slug) return notFound();
 
-  const articles = await getArticles();
+  const articles = await loadArticles();
   const currentIndex = articles.findIndex((article) => article.slug === slug);
   if (currentIndex === -1) return notFound();
 

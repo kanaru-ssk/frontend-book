@@ -1,7 +1,7 @@
-import { getArticles } from "@/libs/get-articles";
+import { loadArticles } from "@/libs/load-articles";
 
 export async function getArticleParams() {
-  const articles = await getArticles();
+  const articles = await loadArticles();
 
   const params: { slug: string[] }[] = [];
   let chapterSlug: string = "";

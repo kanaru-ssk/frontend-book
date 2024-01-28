@@ -15,7 +15,7 @@ type Article = {
   mdx: Mdx;
 };
 
-export async function getArticles() {
+export async function loadArticles() {
   const fileNames = fs.readdirSync(path.join(process.cwd(), "src", "articles"));
 
   const articles: Article[] = [];
