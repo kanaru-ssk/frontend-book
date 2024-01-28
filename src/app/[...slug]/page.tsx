@@ -1,10 +1,10 @@
-import { loadArticles } from "@/libs/load-articles";
 import { notFound } from "next/navigation";
 import { FooterLink } from "@/components/footer-link";
-import { getArticleParams } from "@/libs/get-article-params";
+import { loadArticleParams } from "@/libs/load-article-params";
+import { loadArticles } from "@/libs/load-articles";
 
 export async function generateStaticParams() {
-  return await getArticleParams();
+  return await loadArticleParams();
 }
 
 type Props = {

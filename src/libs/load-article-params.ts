@@ -1,6 +1,6 @@
 import { loadArticles } from "@/libs/load-articles";
 
-export async function getArticleParams() {
+export async function loadArticleParams() {
   const articles = await loadArticles();
 
   const params: { slug: string[] }[] = [];

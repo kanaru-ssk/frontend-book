@@ -13,7 +13,7 @@ export type ArticleChapter = {
   }[];
 };
 
-export async function getArticleChapters() {
+export async function loadArticleChapters() {
   const articles = await loadArticles();
 
   const chapters: ArticleChapter[] = [];
