@@ -2,10 +2,10 @@ import { TabMdx } from "@/components/tab-mdx"
 
 export const metadata = {
   title: "開発環境の構築",
-  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠です。このチャプターではVScodeをインストールし、開発を始める準備を整えます。"
+  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠です。このチャプターではVisualStudioCodeをインストールし、開発を始める準備を整えます。"
 };
 
-# 開発環境構築 : VScodeのインストール
+# 開発環境構築 : VisualStudioCodeのインストール
 
 Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があります。
 
@@ -20,32 +20,31 @@ Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを
 
 一般的なテキストエディターであるメモ帳アプリでは、コードの書き込みが難しく、エラーや不具合の発見が複雑になります。
 
-Visual Studio Code（VScode）は多くの開発者に愛用されている専用のテキストエディターです。
+VisualStudioCodeは多くの開発者に愛用されている専用のテキストエディターです。
 
-このチャプターではVScodeをインストールし、開発を始める準備を整えます。
+このチャプターではVisualStudioCodeをインストールし、開発を始める準備を整えます。
 
-## Visual Studio Codeの入手
+## VisualStudioCodeのインストール手順
 
 <TabMdx>
   <div data-label="windows">
-    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534107)からVScodeのインストーラーをダウンロードします。
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534107)からインストーラーをダウンロードします。
     2. ダウンロードされたインストーラー **VSCodeUserSetup-\{version\}.exe** をダブルクリックして実行します。これには1分ほどしかかかりません。
   </div>
   <div data-label="mac">
-    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534106)からVScodeをダウンロードします。
-    2. Finderを開き、**option⌥ command⌘ L**を同時に押すとダウンロードフォルダが開きます。
-    3. ダウンロードされたzipファイルをダブルクリックして解凍すると、**Visual Studio Code.app**が表示されます。
-    4. Finderを別ウィンドウでもう一つ開き、**shift⇧ command⌘ A**を同時に押すとアプリケーションフォルダが開きます。
-    3. **Visual Studio Code.app**をアプリケーションフォルダにドラッグします。
-    4. アプリケーションフォルダからVScodeをダブルクリックして開きます。
-    5. Dock内にあるアイコンを右クリックして、コンテキストメニューを表示し、「オプション」→「Dockに残す」を選択して、VScodeをDockに追加します。
+    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534106)からVisualStudioCodeをダウンロードします。
+    2. Finderを開き、 **command⌘ + option⌥ + L** を同時に押すとダウンロードフォルダが開きます。
+    3. ダウンロードされたzipファイルをダブルクリックして解凍すると、 **Visual Studio Code.app** が表示されます。
+       ![screenshot](/img/01-01-mac-01.png)
+    4. **command⌘ + N** でFinderを別ウィンドウで開き、 **command⌘ + shift⇧ + A** でアプリケーションフォルダが開きます。
+    3. **Visual Studio Code.app** をアプリケーションフォルダにドラッグします。
+       ![screenshot](/img/01-01-mac-02.png)
+    4. アプリケーションフォルダから **Visual Studio Code.app** をダブルクリックして開きます。
+    5. Dock内にあるアイコンを右クリックして、コンテキストメニューを表示し、「オプション」→「Dockに残す」を選択して、VisualStudioCodeをDockに追加します。
+       ![screenshot](/img/01-01-mac-03.png)
   </div>
 </TabMdx>
 
-## 初期設定
+おめでとうございます! これでwebページを作る準備が出来ました。
 
-インストールが完了すると、VScodeが起動します。初回起動時には、いくつかの初期設定が求められることがあります。言語やテーマの選択など、個人の好みに合わせて設定してください。
-
-これで、VScodeのインストールと基本的なセットアップが完了しました。次のステップに進んで、実際にコーディングを始めましょう！
-
-Happy coding!
+次のセクションで早速HTMLを書いてみましょう!
