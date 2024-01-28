@@ -20,14 +20,14 @@ export default async function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <header className="fixed top-0 z-10 flex h-16 w-full items-center border-b border-b-neutral-300 px-24 backdrop-blur md:px-10">
+        <header className="fixed top-0 z-10 flex h-16 w-full items-center justify-center border-b border-b-neutral-300 backdrop-blur md:justify-start md:px-10">
           <Link href="/" className="text-xl font-bold">
             Frontend Book
           </Link>
         </header>
         <SideMenu articleIndexes={articleIndexes} />
         <main className="mt-16">
-          <article className="prose prose-neutral max-w-none break-all p-10 md:ml-64">
+          <article className="prose prose-neutral max-w-none break-all px-5 py-10 md:ml-64 md:px-10">
             {children}
           </article>
         </main>
