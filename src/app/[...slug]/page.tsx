@@ -1,11 +1,10 @@
-import Link from "next/link";
 import { getArticles } from "@/libs/get-articles";
 import { notFound } from "next/navigation";
+import { FooterLink } from "@/components/footer-link";
 import { getArticleParams } from "@/libs/get-article-params";
 
 export async function generateStaticParams() {
-  const param = await getArticleParams();
-  return param;
+  return await getArticleParams();
 }
 
 type Props = {
@@ -44,30 +43,28 @@ export default async function Article({ params }: Props) {
       <article className="prose prose-neutral max-w-none break-all">
         <MDX />
       </article>
-      <nav className="mt-16 grid grid-cols-2">
-        {prevArticle ? (
-          <Link
-            href={prevArticle.href}
-            className="relative rounded px-8 py-5 before:absolute before:left-4 before:top-1/2 before:h-2 before:w-2 before:rotate-45 before:border-b-2 before:border-l-2 before:border-neutral-500 hover:bg-neutral-100"
-          >
-            <p className="mb-1 text-sm text-neutral-500">前のページ</p>
-            <p>{prevArticle.mdx.metadata.title}</p>
-          </Link>
-        ) : (
-          <span></span>
-        )}
-        {nextArticle ? (
-          <Link
-            href={nextArticle.href}
-            className="relative rounded px-8 py-5 text-right before:absolute before:right-4 before:top-1/2 before:h-2 before:w-2 before:-rotate-45 before:border-b-2 before:border-r-2 before:border-neutral-500 hover:bg-neutral-100"
-          >
-            <p className="mb-1 text-sm text-neutral-500">次のページ</p>
-            <p>{nextArticle.mdx.metadata.title}</p>
-          </Link>
-        ) : (
-          <span></span>
-        )}
-      </nav>
+      <footer>
+        <nav className="mt-16 grid grid-cols-2">
+          {prevArticle ? (
+            <FooterLink
+              type="prev"
+              href={prevArticle.href}
+              title={prevArticle.mdx.metadata.title}
+            />
+          ) : (
+            <span></span>
+          )}
+          {nextArticle ? (
+            <FooterLink
+              type="prev"
+              href={nextArticle.href}
+              title={nextArticle.mdx.metadata.title}
+            />
+          ) : (
+            <span></span>
+          )}
+        </nav>
+      </footer>
     </>
   );
 }
