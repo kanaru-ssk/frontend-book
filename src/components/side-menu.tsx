@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ArticleChapter } from "@/libs/load-article-chapters";
 import { useState } from "react";
+import type { ArticleChapter } from "@/libs/load-article-chapters";
 
 type Props = {
   articleChapters: ArticleChapter[];

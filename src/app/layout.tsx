@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { SideMenu } from "@/components/side-menu";
 import { SyncTabProvider } from "@/components/tab";
