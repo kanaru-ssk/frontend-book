@@ -15,7 +15,7 @@ export function Tab({ tabs }: TabProps) {
 
   return (
     <div className="shadow">
-      <div className="border-b-2 border-neutral-300">
+      <div className="space-x-2 border-b-2 border-neutral-300 px-3">
         {tabs.map(({ label }, index) => (
           <TabLabel
             label={label}
