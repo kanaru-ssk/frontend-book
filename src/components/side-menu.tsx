@@ -30,7 +30,7 @@ export function SideMenu({ articleChapters }: Props) {
               <Link
                 href={chapter.href}
                 data-active={chapter.slug === slug}
-                className="my-1 inline-block font-semibold text-neutral-500 hover:text-neutral-600 data-[active=true]:text-black"
+                className="my-1 inline-block font-semibold text-neutral-500 hover:text-neutral-600 data-[active=true]:text-blue-500"
               >
                 {chapter.title}
               </Link>
@@ -40,7 +40,7 @@ export function SideMenu({ articleChapters }: Props) {
                     <Link
                       href={section.href}
                       data-active={section.slug === slug}
-                      className="ml-1 inline-block border-l border-l-neutral-300 py-1 pl-4 text-neutral-500 hover:border-l-neutral-400 hover:text-neutral-600 data-[active=true]:border-l-black data-[active=true]:text-black"
+                      className="ml-1 inline-block border-l border-l-neutral-300 py-1 pl-4 text-neutral-500 hover:border-l-neutral-400 hover:text-neutral-600 data-[active=true]:border-l-blue-500 data-[active=true]:text-blue-500"
                     >
                       {section.title}
                     </Link>
