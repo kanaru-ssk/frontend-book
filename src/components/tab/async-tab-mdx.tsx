@@ -1,11 +1,11 @@
 import { Children, isValidElement, type ReactNode } from "react";
 import { AsyncTab, type AsyncTabProps } from "./async-tab";
 
-type TabMdxProps = {
+type Props = {
   children: ReactNode;
 };
 
-export function AsyncTabMdx({ children }: TabMdxProps) {
+export function AsyncTabMdx({ children }: Props) {
   const tabs = Children.toArray(children).reduce<AsyncTabProps["tabs"]>(
     (acc, content) => {
       if (isValidElement(content)) {
