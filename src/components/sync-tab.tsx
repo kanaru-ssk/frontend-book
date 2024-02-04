@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useContext, createContext, type ReactNode } from "react";
+import { TabLabel } from "@/components/tab-label";
 
-type Os = "windows" | "mac";
+const allOs = ["windows", "mac"] as const;
+type Os = (typeof allOs)[number];
 
 type SyncTabValue = {
   target: Os;
@@ -28,35 +30,20 @@ export function SyncTabProvider({ children }: SyncTabProviderProps) {
 type SyncTabProps = { contents: { windows: ReactNode; mac: ReactNode } };
 
 export function SyncTab({ contents }: SyncTabProps) {
-  const { target } = useContext(SyncTabContext);
+  const { target, setTarget } = useContext(SyncTabContext);
 
   return (
     <div className="shadow">
       <div className="border-b-2 border-neutral-300">
-        <Label os="windows" />
-        <Label os="mac" />
+        {allOs.map((os) => (
+          <TabLabel
+            label={os}
+            isActive={target === os}
+            onClick={() => setTarget(os)}
+          />
+        ))}
       </div>
       <div className="p-4">{contents[target]}</div>
     </div>
-  );
-}
-
-type LabelProps = { os: Os };
-
-function Label({ os }: LabelProps) {
-  const { target, setTarget } = useContext(SyncTabContext);
-
-  return (
-    <button
-      type="button"
-      className={`${
-        target === os
-          ? "border-black text-black"
-          : "border-neutral-300 text-neutral-500 hover:border-neutral-400 hover:text-neutral-600"
-      } m-2 -mb-0.5 min-w-36 border-b-2 px-8 py-3 text-lg`}
-      onClick={() => setTarget(os)}
-    >
-      {os}
-    </button>
   );
 }
