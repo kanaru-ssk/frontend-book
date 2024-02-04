@@ -7,12 +7,12 @@ import { TabLayout } from "./tab-layout";
 const allOs = ["windows", "mac"] as const;
 type Os = (typeof allOs)[number];
 
-type SyncTabValue = {
+type ContextValue = {
   target: Os;
   setTarget: (os: Os) => void;
 };
 
-const SyncTabContext = createContext<SyncTabValue>({} as SyncTabValue);
+const SyncTabContext = createContext({} as ContextValue);
 
 type SyncTabProviderProps = {
   children: ReactNode;
@@ -28,9 +28,9 @@ export function SyncTabProvider({ children }: SyncTabProviderProps) {
   );
 }
 
-type SyncTabProps = { contents: { windows: ReactNode; mac: ReactNode } };
+type Props = { contents: { windows: ReactNode; mac: ReactNode } };
 
-export function SyncTab({ contents }: SyncTabProps) {
+export function SyncTab({ contents }: Props) {
   const { target, setTarget } = useContext(SyncTabContext);
 
   return (

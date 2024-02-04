@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-export type AsyncTabProps = {
+type Props = {
   labels: ReactNode;
   children: ReactNode;
 };
 
-export function TabLayout({ labels, children }: AsyncTabProps) {
+export function TabLayout({ labels, children }: Props) {
   return (
     <div className="shadow">
       <div className="space-x-2 border-b-2 border-neutral-300 px-3">
