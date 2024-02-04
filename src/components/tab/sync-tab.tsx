@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useContext, createContext, type ReactNode } from "react";
-import { TabLabel } from "@/components/tab-label";
+import { TabLabel } from "./tab-label";
+import { TabLayout } from "./tab-layout";
 
 const allOs = ["windows", "mac"] as const;
 type Os = (typeof allOs)[number];
@@ -33,17 +34,16 @@ export function SyncTab({ contents }: SyncTabProps) {
   const { target, setTarget } = useContext(SyncTabContext);
 
   return (
-    <div className="shadow">
-      <div className="space-x-2 border-b-2 border-neutral-300 px-3">
-        {allOs.map((os) => (
-          <TabLabel
-            label={os}
-            isActive={target === os}
-            onClick={() => setTarget(os)}
-          />
-        ))}
-      </div>
-      <div className="p-4">{contents[target]}</div>
-    </div>
+    <TabLayout
+      labels={allOs.map((os) => (
+        <TabLabel
+          label={os}
+          isActive={target === os}
+          onClick={() => setTarget(os)}
+        />
+      ))}
+    >
+      {contents[target]}
+    </TabLayout>
   );
 }

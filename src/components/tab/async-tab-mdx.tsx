@@ -1,12 +1,12 @@
 import { Children, isValidElement, type ReactNode } from "react";
-import { Tab, type TabProps } from "@/components/tab";
+import { AsyncTab, type AsyncTabProps } from "./async-tab";
 
 type TabMdxProps = {
   children: ReactNode;
 };
 
-export function TabMdx({ children }: TabMdxProps) {
-  const tabs = Children.toArray(children).reduce<TabProps["tabs"]>(
+export function AsyncTabMdx({ children }: TabMdxProps) {
+  const tabs = Children.toArray(children).reduce<AsyncTabProps["tabs"]>(
     (acc, content) => {
       if (isValidElement(content)) {
         const label = content.props["data-label"];
@@ -17,5 +17,5 @@ export function TabMdx({ children }: TabMdxProps) {
     [],
   );
 
-  return <Tab tabs={tabs} />;
+  return <AsyncTab tabs={tabs} />;
 }

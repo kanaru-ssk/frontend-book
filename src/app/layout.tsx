@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SideMenu } from "@/components/side-menu";
-import { SyncTabProvider } from "@/components/sync-tab";
+import { SyncTabProvider } from "@/components/tab/sync-tab";
 import { loadArticleChapters } from "@/libs/load-article-chapters";
 import "./globals.css";
 

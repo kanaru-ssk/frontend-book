@@ -1,5 +1,5 @@
 import { Children, isValidElement, type ReactNode } from "react";
-import { SyncTab } from "@/components/sync-tab";
+import { SyncTab } from "./sync-tab";
 
 type SyncTabMdxProps = {
   children: ReactNode;
