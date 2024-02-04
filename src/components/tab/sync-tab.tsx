@@ -37,6 +37,7 @@ export function SyncTab({ contents }: SyncTabProps) {
     <TabLayout
       labels={allOs.map((os) => (
         <TabLabel
+          key={os}
           label={os}
           isActive={target === os}
           onClick={() => setTarget(os)}

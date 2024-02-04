@@ -18,6 +18,7 @@ export function AsyncTab({ tabs }: AsyncTabProps) {
     <TabLayout
       labels={tabs.map(({ label }, index) => (
         <TabLabel
+          key={label}
           label={label}
           isActive={activeIndex === index}
           onClick={() => setActiveIndex(index)}
