@@ -1,3 +1,27 @@
+import Link from "next/link";
+
 export default function HomePage() {
-  return <div>Home</div>;
+  return (
+    <div className="flex h-screen items-center justify-center px-5">
+      <div className="grid gap-8">
+        <div className="text-center text-lg leading-10 tracking-widest">
+          <p>
+            <span className="inline-block">Frontend Bookは、</span>
+            <span className="inline-block">プログラミング未経験から</span>
+          </p>
+          <p>
+            <span className="inline-block">フロントエンドエンジニアの</span>
+            <span className="inline-block">求人に応募するための</span>
+            <span className="inline-block">無料学習教材です</span>
+          </p>
+        </div>
+        <Link
+          href="/introduction"
+          className="mx-auto w-fit rounded-md bg-blue-600 px-8 py-2 font-bold text-white hover:bg-blue-800 active:bg-blue-950"
+        >
+          はじめる
+        </Link>
+      </div>
+    </div>
+  );
 }

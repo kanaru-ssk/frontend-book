@@ -6,6 +6,9 @@ const config: Config = {
   plugins: [typography],
   theme: {
     extend: {
+      height: {
+        screen: "100svh",
+      },
       fontFamily: {
         sans: ["Helvetica", "sans-serif"],
         self: ["serif"],
