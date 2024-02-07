@@ -6,13 +6,13 @@ export default function HomePage() {
       <div className="grid gap-8">
         <div className="text-center text-lg leading-10 tracking-widest">
           <p>
-            <span className="inline-block">Frontend Bookは、</span>
+            <span className="inline-block">「Frontend Book」は、</span>
             <span className="inline-block">プログラミング未経験から</span>
           </p>
           <p>
             <span className="inline-block">フロントエンドエンジニアの</span>
             <span className="inline-block">求人に応募するための</span>
-            <span className="inline-block">無料学習教材です</span>
+            <span className="inline-block">無料学習サイトです</span>
           </p>
         </div>
         <Link
