@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { SideMenu } from "@/components/side-menu";
-import { SyncTabProvider } from "@/components/tab";
 import { loadArticleChapters } from "@/libs/load-article-chapters";
 import "./globals.css";
 
@@ -27,13 +25,7 @@ export default async function RootLayout({
             Frontend Book
           </Link>
         </header>
-        <SideMenu articleChapters={articleChapters} />
-        <main className="mt-16 px-5 py-10 md:ml-64 md:px-10">
-          <SyncTabProvider>{children}</SyncTabProvider>
-        </main>
-        <footer className="py-10 text-center text-xs">
-          &copy; 2024 Frontend Book
-        </footer>
+        {children}
       </body>
     </html>
   );
