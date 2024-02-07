@@ -13,7 +13,7 @@ export default async function ArticleLayout({
   return (
     <>
       <SideMenu articleChapters={articleChapters} />
-      <main className="mt-16 px-5 py-10 md:ml-64 md:px-10">
+      <main className="mt-16 px-5 py-10 lg:ml-64 lg:px-10">
         <SyncTabProvider>{children}</SyncTabProvider>
       </main>
       <footer className="py-10 text-center text-xs">
