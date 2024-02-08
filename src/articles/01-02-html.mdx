@@ -36,9 +36,72 @@ headとbody
 #### ブラウザ上にHello World!を表示する
 1. VSCode上で`index.html`を開く
 1. `Hello World!`を表示させる
+  ```html
+  Hello World!
+  ```
+1. 以下のように表示されれば完了です
+![html-Hello-World](/img)
+
+
+#### HTMLでwebページを書いてみる
+今回はカフェのサンプルサイトのHTMLを書いてみます
+サンプルサイトは[こちら](https://frontend-book.kanaru.jp/sample/)
+
+ここではHTMLだけを書くため、最終的に以下のような画面になったら完了です
+![html-sample](/img)
+
+#### htmlであることを示す
+htmlファイルの1行目には必ずhtmlであることを宣言する`<!doctype html>`を記述します
+
+その下にどこからどこまでがhtmlで書かれているかわかるようにhtmlタグを追加します
+
+htmlタグでは表示言語を`lang="--"`で示します
+
+英語は`"en"`、日本語は`"ja"`です
 ```html
-Hello World!
+<!doctype html>
+<html lang="en"></html>
 ```
+
+#### headタグを追加
+htmlタグの中に内容を書いていきます
+
+始めにwebサイトの基本情報を書くhaedタグを追加します
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hoge Coffee</title>
+  </head>
+</html>
+```
+- metaタグ: ---
+  - charset: ---
+  - name: ---
+  - content: ---
+- titleタグ: webサイトのタイトルを書く
+
+#### webサイトのコンテンツを書く
+headタグの下にbodyタグを追加します
+
+bodyタグの中にコンテンツを書いていきます
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hoge Coffee</title>
+  </head>
+  <body></body>
+</html>
+```
+
+
+
 
 
 ### [HTMLで使用できるタグ](https://developer.mozilla.org/ja/docs/Web/HTML/Reference)
