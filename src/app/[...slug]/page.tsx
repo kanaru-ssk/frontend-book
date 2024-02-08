@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
   return mdx.metadata;
 }
 
-export default async function Article({ params }: Props) {
+export default async function ArticlePage({ params }: Props) {
   const slug = params.slug.pop();
   if (!slug) return notFound();
 
