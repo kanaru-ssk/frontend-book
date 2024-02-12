@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
+import { Image } from "@/components/image"
 
 export const metadata = {
   title: "Webサイトを作る",
@@ -8,8 +9,7 @@ export const metadata = {
 
 この章では、HTML、CSS、JavaScriptを使用して以下のような架空のカフェのwebサイトを作成します。
 
-
-![デモページキャプチャ](/img/demo.png)
+<Image src="/img/demo.png" alt="デモページキャプチャ" width={780} height={1367} />
 
 <Link
   href="https://frontend-book.kanaru.jp/sample/"
@@ -24,7 +24,7 @@ export const metadata = {
 - Visual Studio Codeの基本的な使い方が分かる
 - HTMLを使ってwebページの作成ができる
 - CSSを使ってwebページの見た目を変更できる
-- JavaScriptをHTMLの内容を更新できる
+- JavaScriptを使ってHTMLの内容を更新できる
 
 [**1節 開発環境の構築**](./getting-start/installation)
 
