@@ -88,6 +88,8 @@ webページの構造をつくるコード
 1. 以下のように表示されれば成功です(画像はedgeで開いたもの)
   <Image src="/img/01-02-html-02.png" alt="screenshot" width="800" height="800" />
 
+正しく表示されたのを確認したら、Hello World!の文字は削除しておきましょう
+
 ### HTMLでwebページを書いてみる
 今回はカフェのサンプルサイトのHTMLを書いてみます
 <Link
@@ -100,6 +102,15 @@ webページの構造をつくるコード
 
 ここではHTMLだけを書くため、最終的に以下のような画面になったら完了です
 <Image src="/img/01-01-liveserver-01.png" alt="screenshot" width="800" height="800" />
+
+
+サイト内で使う画像を以下からダウンロードしておいてください
+<a href="/sample/coffee-beans.png" download>coffee-beans.pngのダウンロード</a>
+<a href="/sample/cafe-interior.png" download>cafe-interior.pngのダウンロード</a>
+<a href="/sample/top-page.png" download>top-page.pngのダウンロード</a>
+
+ダウンロードが完了したら、VSCodeでwebフォルダにドラック&ドロップでコピーしましょう
+
 
 ### htmlであることを示す
 htmlファイルの1行目には必ずhtmlであることを宣言する`<!doctype html>`を記述します
@@ -193,7 +204,6 @@ mainタグの中にpタグとaタグを追加します
 先ほどのpタグの下に、imgタグ、h2タグ、pタグを追加します
 
 imgタグ内で使う画像は以下からダウンロードしてください
-<br/><a href="/sample/coffee-beans.png" download>coffee-beans.pngのダウンロード</a>
 
 ```html
 <main>
@@ -216,7 +226,6 @@ imgタグ内で使う画像は以下からダウンロードしてください
 
 ### コンテンツの詳細をもう一つ追加する
 同じようなものを内容を変更してもう１つ追加します
-<br/><a href="/sample/cafe-interior.png" download>cafe-interior.pngのダウンロード</a>
 ```html
 <main>
   <p>
