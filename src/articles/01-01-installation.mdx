@@ -1,13 +1,15 @@
+import Link from "next/link";
+import { Image } from "@/components/image"
 import { SyncTabMdx } from "@/components/tab"
 
 export const metadata = {
   title: "開発環境の構築",
-  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠ですこのチャプターではVisual Studio Codeをインストールし、開発を始める準備を整えます"
+  description: "Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があり、この作業には専用のテキストエディターが不可欠ですこのチャプターではVisual Studio Codeをインストールし、開発を始める準備を整えます。"
 };
 
-# 開発環境構築 : Visual Studio Codeのインストール
+# 1節 開発環境の構築
 
-Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があります
+Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを記述する必要があります。
 
 ```html
 <body>
@@ -16,58 +18,51 @@ Webページを作成するには、HTMLやCSS、JavaScriptなどのコードを
 </body>
 ```
 
-この作業には専用のテキストエディターが不可欠です
+この作業には専用のテキストエディターが不可欠です。
 
-一般的なテキストエディターであるメモ帳アプリでは、コードの書き込みが難しく、エラーや不具合の発見が複雑になります
+一般的なテキストエディターであるメモ帳アプリでは、コードの書き込みが難しく、エラーや不具合の発見が複雑になります。
 
-Visual Studio Code(以下VSCode)は多くの開発者に愛用されている専用のテキストエディターです
+Visual Studio Code(以下VSCode)は多くの開発者に愛用されている専用のテキストエディターです。
 
-このチャプターではVSCodeや拡張機能をインストールし、開発を始める準備を整えます
+このチャプターではVSCodeや拡張機能をインストールし、開発を始める準備を整えます。
 
-## Visual Studio Codeのインストール
+## VSCodeのインストール
 
 <SyncTabMdx>
   <div data-label="windows">
-    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534107)からインストーラーをダウンロードします
-    1. エクスプローラーを開き、ダウンロードフォルダを開きます
-    1. ダウンロードされたインストーラー **VSCodeUserSetup-\{version\}.exe** をダブルクリックして実行します
-      ![screenshot](/img/01-01-windows-01.png)
-    1. **同意する**を選択し、**次へ**をクリックする
-      ![screenshot](/img/01-01-windows-02.png)
-    1. デフォルトのまま**次へ**をクリックし、続けて**インストール**をクリックする
-    1. **Visual Studio Code セットアップウィザードの完了**の画面が出てきたらインストール完了
-      <br />**完了**をクリックする
-      ![screenshot](/img/01-01-windows-03.png)
-
+    1. <Link href="https://go.microsoft.com/fwlink/?LinkID=534107" target="_blank" rel="noopener noreferrer">こちら</Link>からインストーラーをダウンロードします。
+    1. ファイルエクスプローラーでダウンロードフォルダを開きます。
+    1. ダウンロードされたインストーラー **VSCodeUserSetup-\{version\}.exe** をダブルクリックして実行します。
+        <Image src="/img/01-01-windows-01.png" width={768} height={555} alt="screenshot" />
+    1. **同意する**を選択し、**次へ**をクリックする。
+        <Image src="/img/01-01-windows-02.png" width={768} height={579} alt="screenshot" />
+    1. デフォルトのまま**次へ**をクリックし、続けて**インストール**をクリックする。
+    1. **Visual Studio Code セットアップウィザードの完了**の画面が出てきたら**完了**をクリックしてインストール完了。
+        <Image src="/img/01-01-windows-03.png" width={768} height={579} alt="screenshot" />
   </div>
   <div data-label="mac">
-    1. [こちら](https://go.microsoft.com/fwlink/?LinkID=534106)からVSCodeをダウンロードします
-    1. Finderを開き、 **command⌘ + option⌥ + L** を同時に押すとダウンロードフォルダが開きます
-    1. ダウンロードされたzipファイルをダブルクリックして解凍すると、 **Visual Studio Code.app** が表示されます
-       ![screenshot](/img/01-01-mac-01.png)
-    1. **command⌘ + N** でFinderを別ウィンドウで開き、 **command⌘ + shift⇧ + A** でアプリケーションフォルダが開きます
-    1. **Visual Studio Code.app** をアプリケーションフォルダにドラッグします
-       ![screenshot](/img/01-01-mac-02.png)
-    1. アプリケーションフォルダから **Visual Studio Code.app** をダブルクリックして開きます
-    1. Dock内にあるアイコンを右クリックして、コンテキストメニューを表示し、「オプション」→「Dockに残す」を選択して、VSCodeをDockに追加します
-       ![screenshot](/img/01-01-mac-03.png)
+    1. <Link href="https://go.microsoft.com/fwlink/?LinkID=534106" target="_blank" rel="noopener noreferrer">こちら</Link>からVSCodeをダウンロードします。
+    1. Finderでダウンロードフォルダを開きます。
+    1. ダウンロードされたzipファイルをダブルクリックして解凍すると、 **Visual Studio Code.app** が表示されます。
+        <Image src="/img/01-01-mac-01.png" width={768} height={398} alt="screenshot" />
+    1. Finderを別ウィンドウで開き、 アプリケーションフォルダを開きます。
+    1. **Visual Studio Code.app** をアプリケーションフォルダにドラッグします。
+        <Image src="/img/01-01-mac-02.png" width={768} height={553} alt="screenshot" />
+    1. アプリケーションフォルダから **Visual Studio Code.app** をダブルクリックして開けたら完了。
   </div>
 </SyncTabMdx>
-<br />
 
 ## 拡張機能の追加
 
-VSCodeには様々な拡張機能が用意されており、自分が使いやすいようにカスタマイズすることができます
+VSCodeには様々な拡張機能が用意されており、自分が使いやすいようにカスタマイズすることができます。
 
-ここでは基本的な拡張機能として、コードフォーマッターであるPrettierとローカルホストの起動を自動化するLive Serverのインストールを行います
-<br />
+ここでは基本的な拡張機能として、コードフォーマッターであるPrettierとローカルサーバーを立ち上げるためのLive Serverのインストールを行います。
 
 ### Prettier
 
-Prettierはコードを綺麗に整えてくれるための機能です
+Prettierはコードを綺麗に整えてくれるための機能です。
 
-コードを整形することによって、可読性が上がり、ミスが起きにくくなります
-<br />
+コードを整形することによって、可読性が上がり、ミスが起きにくくなります。
 
 #### Prettierのインストール
 1. VSCodeを起動し、左側のバーのExtensionsを開く
@@ -75,7 +70,6 @@ Prettierはコードを綺麗に整えてくれるための機能です
 1. 検索バーに**Prettier**と入力し、選択する
   ![screenshot](/img/01-01-prettier-02.png)
 1. **Install**をクリックする
-<br />
 
 #### Prettierの有効化
 1. VSCodeの画面の左下にある歯車マークをクリックし、**Settings**をクリックする
@@ -85,7 +79,6 @@ Prettierはコードを綺麗に整えてくれるための機能です
 1. Editor: Defaultformatterを**None**から**Prettier-Code Formatter**に変更する
   ![screenshot](/img/01-01-prettier-05.png)
   ![screenshot](/img/01-01-prettier-06.png)
-<br />
 
 #### 保存時にコードをフォーマットするようにする
 1. 設定画面の検索バーに**save**と入力する
@@ -94,14 +87,12 @@ Prettierはコードを綺麗に整えてくれるための機能です
   ![screenshot](/img/01-01-prettier-08.png)
 
 VSCodeを開き直し、正しくPrettierが起動しているか確認して完了!
-<br />
 
 ### Live Server
 
 Live Serverはコードを追加・変更した際にローカルホストを起動し、ブラウザの更新を自動化する機能です
 
 コードを変更するたびにブラウザを更新するのは手間なので自動化することによって素早く変更を確認することができます
-<br />
 
 #### Live Serverのインストール
 1. VSCodeを起動し、左側のバーのExtensionsを開く
@@ -110,7 +101,7 @@ Live Serverはコードを追加・変更した際にローカルホストを起
 1. **Install**をクリックする
 
 VSCodeの画面の右下に**Go Live**の表示が追加されていれば完了!
-<br />
+
 おめでとうございます! これでwebページを作る準備が出来ました
 
 次のセクションで早速HTMLを書いてみましょう!

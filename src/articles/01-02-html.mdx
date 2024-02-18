@@ -1,99 +1,267 @@
+import Link from "next/link"
+import { Image } from "@/components/image"
+import { SyncTabMdx } from "@/components/tab/sync-tab-mdx"
+
 export const metadata = {
   title: "html",
 };
 
-# Chapter1 webサイトをつくってみる
+
+# 02 HTMLでwebページ作ってブラウザで表示する
 
 参考サイト：[mdn wed docs](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web)
 
-## 02 HTMLでwebページ作ってブラウザで表示する
-
-### 目標
+## 目標
 
 - HTMLを用いてwebページを作成できる
 - 書いたページをブラウザで表示できる
 
-### 使用技術
+## 使用技術
 
 - エディタ: VSCode
 - html
 
-### [HTMLの基本](https://developer.mozilla.org/ja/docs/Learn/Getting_started_with_the_web/HTML_basics)
+## HTMLの基本
 
-### HTMLとは
+## HTMLとは
 
 webページの構造をつくるコード
+{/* TODO: HTMLの説明 */}
 
-headとbody
+## 準備
+<SyncTabMdx>
+  <div data-label="windows">
+    1. エクスプローラーを開き、ドキュメントフォルダを開く
+        <Image src="/img/01-02-windows-01.png" alt="screenshot" width="800" height="800" />
+    1. 新しいフォルダを作成する
+        <Image src="/img/01-02-windows-02.png" alt="screenshot" width="800" height="800" />
+    1. `web`に名前を変更する
+        <Image src="/img/01-02-windows-03.png" alt="screenshot" width="800" height="800" />
+    1. VSCodeを立ち上げ、左上のファイルアイコンをクリックする
+    {/* TODO: VSCodeの立ち上げ方法いる？？ */}
+        <Image src="/img/01-02-vscode-01.png" alt="screenshot" width="800" height="800" />
+    1. `Open Folder`をクリックする
+        <Image src="/img/01-02-vscode-02-w.png" alt="screenshot" width="800" height="800" />
+    1. 先ほど作成した`web`フォルダを開く
+        <Image src="/img/01-02-vscode-03.png" alt="screenshot" width="800" height="800" />
+        {/* TODO: VSCodeで表示されるフォルダ名がWEBになってればOKマーク */}
+    1. フォルダ名の横の`New File`をクリックし、新たなファイルを作成する
+        <Image src="/img/01-02-index.html-01.png" alt="screenshot" width="800" height="800" />
+    1. `index.html`と名前を入力し、enterを押す
+        <Image src="/img/01-02-index.html-02.png" alt="screenshot" width="800" height="800" />
+    これでhtmlファイルの作成が完了しました！
+  </div>
+  <div data-label="mac">
+    {/* TODO: mac用に書き換え */}
+    1. Finderを開き、ドキュメントフォルダを開く
+        <Image src="/img/01-02-mac-01.png" alt="screenshot" width="800" height="800" />
+    1. 新しいフォルダを作成する
+        <Image src="/img/01-02-mac-02.png" alt="screenshot" width="800" height="800" />
+    1. `web`に名前を変更する
+        <Image src="/img/01-02-mac-03.png" alt="screenshot" width="800" height="800" />
+        <Image src="/img/01-02-mac-04.png" alt="screenshot" width="800" height="800" />
+    1. VSCodeを立ち上げ、左上のファイルアイコンをクリックする
+        <Image src="/img/01-02-vscode-01.png" alt="screenshot" width="800" height="800" />
+    1. `Open Folder`をクリックする
+        <Image src="/img/01-02-vscode-02-m.png" alt="screenshot" width="800" height="800" />
+    1. 先ほど作成した`web`フォルダを開く
+        <Image src="/img/01-02-vscode-03.png" alt="screenshot" width="800" height="800" />
+    1. フォルダ名の横の`New File`をクリックし、新たなファイルを作成する
+        <Image src="/img/01-02-index.html-01.png" alt="screenshot" width="800" height="800" />
+    1. `index.html`と名前を入力し、enterを押す
+        <Image src="/img/01-02-index.html-02.png" alt="screenshot" width="800" height="800" />
+    これでhtmlファイルの作成が完了しました！
+  </div>
+</SyncTabMdx>
 
-### 準備
 
-1. 任意のフォルダ内に新たなフォルダを作成し、`web`と名前を入力する
-1. VSCodeを立ち上げ、VSCodeで`web`フォルダを開く
-1. `New Files`から新たなファイルを作成し、`index.html`と名前を入力する
+## HTMLを書いてみる
 
-### HTMLを書いてみる
-#### ブラウザ上にHello World!を表示する
-1. VSCode上で`index.html`を開く
-1. `Hello World!`を表示させる
+### ブラウザ上にHello World!を表示する
+1. 先ほど作成した`index.html`に`Hello World!`と入力する
+    ```html
+    Hello World!
+    ```
+    <Image src="/img/01-02-html-01.png" alt="screenshot" width="800" height="800" />
+1. ブラウザを開く
+1. `index.html`のファイルをブラウザ上にドラック＆ドロップする
+1. 以下のように表示されれば成功です(画像はedgeで開いたもの)
+  <Image src="/img/01-02-html-02.png" alt="screenshot" width="800" height="800" />
+
+正しく表示されたのを確認したら、Hello World!の文字は削除しておきましょう
+
+### HTMLでwebページを書いてみる
+今回はカフェのサンプルサイトのHTMLを書いてみます
+<Link
+  href="https://frontend-book.kanaru.jp/sample/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  実際のデモページはこちら
+</Link>
+
+ここではHTMLだけを書くため、最終的に以下のような画面になったら完了です
+<Image src="/img/01-01-liveserver-01.png" alt="screenshot" width="800" height="800" />
+
+
+サイト内で使う画像を以下からダウンロードしておいてください
+<a href="/sample/coffee-beans.png" download>coffee-beans.pngのダウンロード</a>
+<a href="/sample/cafe-interior.png" download>cafe-interior.pngのダウンロード</a>
+<a href="/sample/top-page.png" download>top-page.pngのダウンロード</a>
+
+ダウンロードが完了したら、VSCodeでwebフォルダにドラック&ドロップでコピーしましょう
+
+
+### htmlであることを示す
+htmlファイルの1行目には必ずhtmlであることを宣言する`<!doctype html>`を記述します
+
+その下にどこからどこまでがhtmlで書かれているかわかるようにhtmlタグを追加します
+
+htmlタグでは表示言語を`lang="--"`で示します
+
+英語は`"en"`、日本語は`"ja"`です
 ```html
-Hello World!
+<!doctype html>
+<html lang="en"></html>
 ```
 
+### headタグを追加する
+htmlタグの中に内容を書いていきます
 
-### [HTMLで使用できるタグ](https://developer.mozilla.org/ja/docs/Web/HTML/Reference)
-
-#### 段落
-
+始めにwebサイトの基本情報を書くhaedタグを追加します
 ```html
-<p>Naniyara sugoi kodawarino mame</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hoge Coffee</title>
+  </head>
+</html>
 ```
+- `<head>`: ---
+- `<mata>`: ---
+  - `charset`: ---
+  - `name`: ---
+  - `content`: ---
+- `<title>`: webサイトのタイトルを書く
 
-- 文章の段落をつくりたいときに使う
+{/* TODO: headタグ、metaタグの説明 */}
 
-#### グループ化
+### bodyタグを追加
+headタグの下にbodyタグを追加します
+
+bodyタグの中にコンテンツを書いていきます
 
 ```html
-<div class="top-page">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Hoge Coffee</title>
+  </head>
+  <body>
+    <main></main>
+    <footer></footer>
+  </body>
+</html>
+```
+- `<body>`: サイトに表示される情報を書く
+- `<main>`: 中にサイトのメインコンテンツを書く
+- `<footer>`: 中にサイトのフッター情報を書く
+
+### サイトのトップページを追加する
+mainタグの上にh1タグでトップページの文字を追加します
+```html
+<body>
   <h1>Hoge Coffee</h1>
-</div>
+  <main></main>
+  <footer></footer>
+</body>
 ```
+- `<h1>`: 見出しとして表示したい部分に使う
 
-- 複数のタグにまとめてスタイルをつけるときにグループ化するために使う
+### サイトの説明を追加する
+mainタグの中にpタグとaタグを追加します
+```html
+<body>
+  <h1>Hoge Coffee</h1>
+  <main>
+    <p>
+      This page is the sample of
+      <a href="https://frontend-book.kanaru.jp">Frontend Book</a>
+    </p>
+  </main>
+  <footer></footer>
+</body>
+```
+- `<p>`: 段落を示す　pタグと閉じタグの間に文字列を書く
+- `<a>`: リンクを表示させる　aタグと閉じタグの間にリンクにしたい文字を書く
+  - `href`: 遷移先のurlを書く
 
-#### 画像
+### コンテンツの詳細を追加する
+先ほどのpタグの下に、imgタグ、h2タグ、pタグを追加します
+
+imgタグ内で使う画像は以下からダウンロードしてください
 
 ```html
-<img
-  class="content"
-  src="./coffee-beans.png"
-  alt="Specialty Coffee Beans"
-/>
+<main>
+  <p>
+    This page is the sample of
+    <a href="https://frontend-book.kanaru.jp">Frontend Book</a>
+  </p>
+  <img
+    src="./coffee-beans.png"
+    alt="Specialty Coffee Beans"
+  />
+  <h2>Specialty Coffee Beans</h2>
+  <p>Naniyara sugoi kodawarino mame</p>
+</main>
 ```
+- `<img>`: 画像を表示させる
+  - `src`: 表示させる画像ファイルを指定する
+  - `alt`: 画像の説明を書く　リンク切れなどで画像が表示できないときに表示される
+- `<h2>`: 見出しとして表示したい部分に使う　h1よりもレベルが低い
 
-- 画像を表示させたいときに使う
-- srcには表示させたい画像の場所
-- altには画像の簡単な説明
-
-#### リンク
-
+### コンテンツの詳細をもう一つ追加する
+同じようなものを内容を変更してもう１つ追加します
 ```html
-<a href="https://github.com/kanaru-ssk/frontend-book">Frontend Book</a>
+<main>
+  <p>
+    This page is the sample of
+    <a href="https://frontend-book.kanaru.jp">Frontend Book</a>
+  </p>
+  <img
+    src="./coffee-beans.png"
+    alt="Specialty Coffee Beans"
+  />
+  <h2>Specialty Coffee Beans</h2>
+  <p>Naniyara sugoi kodawarino mame</p>
+  <h2>Great Cafe Interior</h2>
+  <p>Dokoka no kuni no youna naisou</p>
+  <img
+    src="./cafe-interior.png"
+    alt="Great Cafe Interior"
+  />
+</main>
 ```
 
-- リンクを表示したいときに使う
-- hrefにはリンクのURL
-- リンクにしたい文字を`<a></a>`要素で囲む
-
-#### 見出し
-
+### フッターに内容を追加する
+bodyタグ内のfooterタグに内容を追加します
 ```html
-<h1>Hoge Coffee</h1>
-<h2>Specialty Coffee Beans</h2>
+    <img
+      src="./cafe-interior.png"
+      alt="Great Cafe Interior"
+    />
+  </main>
+  <footer>&copy; 2024 Frontend Book</footer>
+</body>
 ```
+- `&copy`: コピーライトを表示する
 
-- 見出しをして表示したい部分に使う
-- `<h1>-<h6>`まであり、レベルで使い分ける
+{/* TODO: それぞれの段階ごとのブラウザ上のスクショ */}
+
 
 ### その他のタグ紹介
 

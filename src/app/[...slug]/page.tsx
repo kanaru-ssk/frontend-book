@@ -36,7 +36,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
-      <article className="prose prose-neutral max-w-none break-all">
+      <article className="prose prose-neutral max-w-3xl break-all">
         <MDX />
       </article>
       <footer>
