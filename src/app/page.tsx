@@ -10,8 +10,10 @@ export default function HomePage() {
             <span className="inline-block">プログラミング未経験から</span>
           </p>
           <p>
-            <span className="inline-block">フロントエンドエンジニアの</span>
-            <span className="inline-block">求人に応募するための</span>
+            <span className="inline-block">
+              webフロントエンドの案件を獲得するのに
+            </span>
+            <span className="inline-block">必要な技術を学習するための</span>
             <span className="inline-block">無料学習サイトです</span>
           </p>
         </div>
