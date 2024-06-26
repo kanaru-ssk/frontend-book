@@ -2,14 +2,14 @@
 
 Webフロントエンドエンジニアを目指す方向けの学習サイトです。
 
-本番URL : https://frontend-book.kanaru.jp
+本番URL : https://frontend-book.goosehack.com
 
 ## 開発環境構築
 
 ### リポジトリをクローン
 
 ```bash
-git clone https://github.com/kanaru-ssk/frontend-book.git
+git clone https://github.com/goose-hack/frontend-book.git
 cd frontend-book
 ```
 
