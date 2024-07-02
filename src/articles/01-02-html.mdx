@@ -8,7 +8,7 @@ export const metadata = {
 
 Chapter 1 - 2
 
-# HTMLでwebページ作ってブラウザで表示する
+# HTMLでwebサイトの構造を作る
 
 ## 目標
 
@@ -440,6 +440,39 @@ HTML要素には、**ブロックレ**ベルコンテンツと、**インライ�
 </div>
 <img src="./cup.png" alt="カップ" width="480" />
 ```
+
+<details>
+<summary>全体のコード</summary>
+```html
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- head : webページに表示しないコンテンツ -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Title</title>
+  </head>
+
+  <!-- body : webページに表示するコンテンツ -->
+  <body>
+    <h1>Hello World</h1>
+    <p>pタグ : 段落を表す要素。paragraph。</p>
+    <p>pタグで囲まれたテキストは、ブラウザ上では通常、1行分の改行が挿入され、段落として表示されます。</p>
+    <ul>
+      <li>ulタグ : 箇条書きリスト。unordered list</li>
+      <li>olタグ : 順序付きリスト。ordered list</li>
+      <li>liタグ : リスト内の項目。list item</li>
+    </ul>
+    <div>
+      <a href="https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML">
+        「mdn web docs - HTML 入門」
+      </a>
+    </div>
+    <img src="./cup.png" alt="カップ" width="480" />
+  </body>
+</html>
+```
+</details>
 
 <Image src="/img/01-02-html-09.png" alt="screenshot" width={512} height={358} />
 
