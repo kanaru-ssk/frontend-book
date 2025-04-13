@@ -19,7 +19,7 @@ export default async function RootLayout({
     <html lang="ja">
       <body>
         <header className="fixed top-0 z-10 flex h-16 w-full items-center justify-center border-b border-b-neutral-300 backdrop-blur lg:justify-start lg:px-10">
-          <Link href="/2024" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             Frontend Book
           </Link>
         </header>

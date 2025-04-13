@@ -5,7 +5,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  pasePath: "/2024",
+  basePath: "/2024",
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
     unoptimized: true,
