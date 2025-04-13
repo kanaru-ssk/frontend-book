@@ -2,15 +2,15 @@
 
 Webフロントエンドエンジニアを目指す方向けの学習サイトです。
 
-本番URL : https://frontend-book.goosehack.com
+本番URL : https://github.com/computer-literacy/2024
 
 ## 開発環境構築
 
 ### リポジトリをクローン
 
 ```bash
-git clone https://github.com/goose-hack/frontend-book.git
-cd frontend-book
+git clone https://github.com/computer-literacy/2024.git
+cd 2024
 ```
 
 ### 依存パッケージインストール
