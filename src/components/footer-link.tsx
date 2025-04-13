@@ -11,7 +11,7 @@ export function FooterLink({ type, href, title }: Props) {
 
   return (
     <Link
-      href={href}
+      href={`/2024/${href}`}
       className={`${
         type === "prev"
           ? "before:left-4 before:rotate-45 before:border-l-2"

@@ -32,7 +32,7 @@ export function SideMenu({ articleChapters }: Props) {
           {articleChapters.map((chapter) => (
             <li key={chapter.chapterId}>
               <Link
-                href={chapter.href}
+                href={`/2024/${chapter.href}`}
                 data-active={chapter.slug === slug}
                 onClick={() => setOpen(false)}
                 className="my-1 inline-block font-semibold text-neutral-500 hover:text-neutral-600 data-[active=true]:text-blue-600"
@@ -43,7 +43,7 @@ export function SideMenu({ articleChapters }: Props) {
                 {chapter.sections.map((section) => (
                   <li key={section.sectionId}>
                     <Link
-                      href={section.href}
+                      href={`/2024/${section.href}`}
                       data-active={section.slug === slug}
                       onClick={() => setOpen(false)}
                       className="ml-1 inline-block border-l border-l-neutral-300 py-1 pl-4 text-neutral-500 hover:border-l-neutral-400 hover:text-neutral-600 data-[active=true]:border-l-blue-600 data-[active=true]:text-blue-600"

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export default function Page() {
   return (
     <div className="flex h-screen items-center justify-center px-5">
       <div className="grid gap-8">
@@ -18,7 +18,7 @@ export default function HomePage() {
           </p>
         </div>
         <Link
-          href="/introduction"
+          href="/2024/introduction"
           className="mx-auto w-fit rounded-md bg-blue-600 px-8 py-2 font-bold text-white hover:bg-blue-800 active:bg-blue-950"
         >
           はじめる

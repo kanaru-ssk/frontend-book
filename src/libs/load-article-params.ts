@@ -14,6 +14,7 @@ export async function loadArticleParams() {
 
     params.push({ slug });
   }
+  console.log(params)
 
   return params;
 }
