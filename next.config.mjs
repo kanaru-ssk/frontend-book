@@ -6,6 +6,7 @@ const nextConfig = {
   output: "export",
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   basePath: "/frontend-book",
+  assetPrefix: "/frontend-book",
   reactStrictMode: true,
   images: {
     unoptimized: true,
