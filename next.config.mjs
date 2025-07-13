@@ -5,6 +5,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 const nextConfig = {
   output: "export",
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  basePath: "/frontend-book",
   reactStrictMode: true,
   images: {
     unoptimized: true,
