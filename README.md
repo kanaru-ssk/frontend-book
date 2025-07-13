@@ -2,7 +2,7 @@
 
 Webフロントエンドエンジニアを目指す方向けの学習サイトです。
 
-本番URL : https://frontend-book.goosehack.com
+本番URL : https://kanaru-ssk.github.io/frontend-book
 
 ## 開発環境構築
 
